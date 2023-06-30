@@ -1,0 +1,14 @@
+pipeline{
+        agent any
+        stages{
+            stage("stage1 : checkout stage"){
+                steps{
+                    git branch :'main' , url: 'https://github.com/shru-h/first-java-repo'
+            
+                }
+            }
+            stage("stage2 : compile the code"){
+                steps{
+                    sh "mvn compile"
+                }
+            }
